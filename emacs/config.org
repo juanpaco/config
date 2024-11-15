@@ -26,7 +26,15 @@ Move all common files typically written to the =user-emacs-directory= to the =va
 Org mode indents elsip weird. Prevent that.
 
 #+begin_src emacs-lisp
-  (setq org-adapt-indentation nil)
+(setq org-adapt-indentation nil)
+#+end_src
+
+** Show Line Numbers
+
+Show line numbers when in a programming mode.
+
+#+begin_src emacs-lisp
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 #+end_src
 
 * Startup Time
