@@ -57,3 +57,26 @@ The current base =magit= package (as of Thu Nov 7 2024) requires a higher versio
 (use-package magit
   :ensure (:wait t))
 #+end_src
+
+* Markdown Mode
+
+I write Markdown files
+
+#+begin_src emacs-lisp
+(use-package markdown-mode
+  :ensure (markdown-mode :host github :repo "jrblevin/markdown-mode" :protocol ssh :wait t)
+  :init (setq markdown-command "multimarkdown"))
+#+end_src
+
+* Strip Whitespace
+
+#+begin_src emacs-lisp
+  (use-package ws-butler
+    :ensure (ws-butler :host github :repo "hlissner/ws-butler" :protocol ssh :wait t)
+    :config
+    (setq ws-butler-keep-whitespace-before-point nil)
+    ;; Do not exempt markdown mode
+    (delq 'markdown-mode ws-butler-global-exempt-modes))
+
+  (ws-butler-global-mode)
+#+end_src
