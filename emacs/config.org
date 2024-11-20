@@ -77,8 +77,12 @@ Show line numbers when in a programming mode.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 #+end_src
 
+** Save History
 
 #+begin_src emacs-lisp
+(use-feature savehist
+  :init
+  (savehist-mode))
 #+end_src
 
 * Magit
