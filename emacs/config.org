@@ -77,13 +77,8 @@ Show line numbers when in a programming mode.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 #+end_src
 
-* Startup Time
 
 #+begin_src emacs-lisp
-(add-hook 'after-init-hook
-          (lambda ()
-            (let ((inhibit-message t))
-              (message "Emacs init time: %s" (emacs-init-time)))))
 #+end_src
 
 * Magit
@@ -156,4 +151,13 @@ I write Markdown files
     (delq 'markdown-mode ws-butler-global-exempt-modes))
 
   (ws-butler-global-mode)
+#+end_src
+
+* Startup Time
+
+#+begin_src emacs-lisp
+(add-hook 'after-init-hook
+          (lambda ()
+            (let ((inhibit-message t))
+              (message "Emacs init time: %s" (emacs-init-time)))))
 #+end_src
