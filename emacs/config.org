@@ -85,7 +85,6 @@ Show line numbers when in a programming mode.
   (savehist-mode))
 #+end_src
 
-* Magit
 * User Interface
 
 ** Completion Menu (Vertico)
@@ -116,6 +115,8 @@ separated by spaces. For example, "som thi" will match "this-is-some-thing".
         completion-category-overrides '((file (styles partial-completion)))))
 #+end_src
 
+* Version Control
+
 One half of the reason I used emacs
 
 ** Transient
@@ -123,15 +124,13 @@ One half of the reason I used emacs
 The current base =magit= package (as of Thu Nov 7 2024) requires a higher version of =transient= than what gets installed with =magit=. Force a higher verison.
 
 #+begin_src emacs-lisp
-(use-package transient
-  :ensure (:tag "v0.7.9" :wait t))
+(use-package transient)
 #+end_src
 
 ** Magit
 
 #+begin_src emacs-lisp
-(use-package magit
-  :ensure (:wait t))
+(use-package magit)
 #+end_src
 
 * Markdown Mode
