@@ -87,6 +87,35 @@ Show line numbers when in a programming mode.
 #+end_src
 
 * Magit
+* User Interface
+
+** Completion Menu (Vertico)
+
+#+begin_src emacs-lisp
+(use-package vertico
+  :init
+  (vertico-mode))
+#+end_src
+
+** Consult
+
+#+begin_src emacs-lisp
+(use-package consult
+  :bind (("C-x b" . consult-buffer)))
+#+end_src
+
+** Completion Style (Orderless)
+
+The orderless completion style allows typing parts of what is being matched,
+separated by spaces. For example, "som thi" will match "this-is-some-thing".
+
+#+begin_src emacs-lisp
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+#+end_src
 
 One half of the reason I used emacs
 
