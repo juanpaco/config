@@ -151,6 +151,14 @@ Two space indentation by default.
               smie-indent-basic 2)
 #+end_src
 
+** Shell
+
+#+begin_src emacs-lisp
+(use-feature shell
+  :config
+  (setq sh-basic-offset 2))
+#+end_src
+
 * Version Control
 
 One half of the reason I used emacs
