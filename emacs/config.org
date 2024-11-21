@@ -161,8 +161,10 @@ I write Markdown files
 
 #+begin_src emacs-lisp
 (use-package markdown-mode
-  :ensure (markdown-mode :host github :repo "jrblevin/markdown-mode" :protocol ssh :wait t)
-  :init (setq markdown-command "multimarkdown"))
+  :config
+  (add-hook 'markdown-mode-hook #'visual-line-mode)
+  (add-hook 'markdown-mode-hook #'visual-wrap-prefix-mode)
+  (setq markdown-list-indent-width 2))
 #+end_src
 
 * Strip Whitespace
