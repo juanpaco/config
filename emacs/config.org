@@ -11,8 +11,7 @@ Install packages by default when configured with use-package.
 (setq use-package-always-ensure t)
 #+end_src
 
-Macro to use to configure built-in features, rather than packages that do not
-need to be installed.
+Macro to use to configure built-in features, rather than packages that do not need to be installed.
 
 #+begin_src emacs-lisp
 (defmacro use-feature (name &rest args)
@@ -85,6 +84,15 @@ Show line numbers when in a programming mode.
   (savehist-mode))
 #+end_src
 
+* Assistance
+
+** Which Key
+
+#+begin_src emacs-lisp
+  (use-feature which-key
+    :init
+    (which-key-mode))
+#+end_src
 * User Interface
 
 ** Completion Menu (Vertico)
