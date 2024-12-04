@@ -175,7 +175,8 @@ separated by spaces. For example, "som thi" will match "this-is-some-thing".
 (use-package treemacs
   :bind ("s-b" . #'treemacs)
   :config
-  (treemacs-follow-mode))
+  (treemacs-follow-mode)
+  (treemacs-project-follow-mode))
 #+end_src
 
 * File Types
